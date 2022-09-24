@@ -50,19 +50,24 @@ if ($conn->connect_error) {
                 <th>No</th>
                 <th>NIM</th>
                 <th>Nama Lengkap</th>
-                <th>Lihat Nilai</th>
-                <th>SI</th>
-                <th>Jarkomdat</th>
-                <th>PK2</th>
+                <th>Sistem Informasi</th>
+                <th>Jaringan Komunikasi Data</th>
+                <th>Proyek Kreatif 2</th>
                 <th>Mekatronika</th>
-                <th>Praktelkom</th>
+                <th>Praktikum Telekomunikasi</th>
+                <!-- Kalau mau pake CRUD -->
+                <!-- <th>Aksi</th> -->
             </thead>
             <tbody>
                 <?php
+                //Untuk urutan
                 $i = 1;
 
+                // Query dari Database
+                // menggabungkan table mahasiswa dan table nilai melalui 'nim' yang sama dan disorting melalui nim juga
                 $kuerimhs = mysqli_query($conn, "SELECT * FROM mahasiswa INNER JOIN nilai ON mahasiswa.nim = nilai.nim ORDER BY mahasiswa.nim");
 
+                // Looping terus selama fetching dari query berlangsung
                 while ($mahasiswa = mysqli_fetch_array($kuerimhs)) {
                     $nim    = $mahasiswa['nim'];
                     $absen = substr($nim, 1);
@@ -79,16 +84,17 @@ if ($conn->connect_error) {
                         <td><?= $i++ ?></td>
                         <td><?= $nim ?></td>
                         <td><?= $nama ?></td>
-                        <td>
-                            <div>
-                                <button id="myBtn">Lihat Nilai</button>
-                            </div>
-                        </td>
-                        <td><?= $si ?></td>
-                        <td><?= $jarkomdat ?></td>
-                        <td><?= $pk2 ?></td>
-                        <td><?= $mekatronika ?></td>
-                        <td><?= $praktelkom ?></td>
+
+                        <td style="text-align: center;"><?= $si ?></td>
+                        <td style="text-align: center;"><?= $jarkomdat ?></td>
+                        <td style="text-align: center;"><?= $pk2 ?></td>
+                        <td style="text-align: center;"><?= $mekatronika ?></td>
+                        <td style="text-align: center;"><?= $praktelkom ?></td>
+                        <!-- Kalau Mau CRUD -->
+                        <!-- <td>
+                            <a href="ubah.php?id=<?= $row["id"]; ?>">Ubah</a>
+                            <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm ('yakin?')">Hapus</a>
+                        </td> -->
                     </tr>
                     <!-- The Modal -->
                     <div id="myModal" class="modal">
