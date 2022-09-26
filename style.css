@@ -34,7 +34,7 @@ th:last-of-type {
   border-collapse: collapse;
   border-top-right-radius: 10px;
 }
-.table-content{
+table{
   border-collapse: collapse;
   width: 100%;
   margin-left:auto;

@@ -23,9 +23,8 @@ if ($conn->connect_error) {
         <h1>Sistem Aplikasi Nilai</h1>
     </header>
     <div class="container" style="margin-left:auto; margin-right:auto;">
-        <table cellpadding="10px" class="table-content">
-            <thead>
-                <th class="pojok-kiri">No</th>
+        <table cellpadding="10px">
+                <th>No</th>
                 <th>NIM</th>
                 <th>Nama Lengkap</th>
                 <th>Sistem Informasi</th>
@@ -35,7 +34,6 @@ if ($conn->connect_error) {
                 <th>Praktikum Telekomunikasi</th>
                 <!-- Kalau mau pake CRUD -->
                 <!-- <th>Aksi</th> -->
-            </thead>
             <tbody>
                 <?php
                 //Untuk urutan
