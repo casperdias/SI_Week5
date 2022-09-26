@@ -5,7 +5,6 @@ $conn = new mysqli("localhost", "root", "", "sisteminformasi");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -15,17 +14,17 @@ if ($conn->connect_error) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Sistem Informasi</title>
 </head>
 
-<body>
-    <header style="text-align: center;">
+<body class="body">
+    <header class="header">
         <h1>Sistem Aplikasi Nilai</h1>
     </header>
     <div class="container" style="margin-left:auto; margin-right:auto;">
-        <table border="5px" cellpadding="5px" style="margin-left:auto; margin-right:auto;">
-            <thead>
+        <table cellpadding="10px" class="table-content">
+            <thead class="thead1">
                 <th>No</th>
                 <th>NIM</th>
                 <th>Nama Lengkap</th>
@@ -52,33 +51,29 @@ if ($conn->connect_error) {
                     $absen = substr($nim, 1);
                     $urut = (int) $absen;
                     $nama   = $mahasiswa['nama'];
+
+                    $si             = $mahasiswa['si'];
+                    $pk2            = $mahasiswa['pk2'];
+                    $jarkomdat      = $mahasiswa['jarkomdat'];
+                    $mekatronika    = $mahasiswa['mekatronika'];
+                    $praktelkom     = $mahasiswa['praktelkom'];
                 ?>
                     <tr>
                         <td><?= $i++ ?></td>
                         <td><?= $nim ?></td>
                         <td><?= $nama ?></td>
 
-                        <td style="text-align: center;"><?= $mahasiswa["si"] ?></td>
-                        <td style="text-align: center;"><?= $mahasiswa["jarkomdat"] ?></td>
-                        <td style="text-align: center;"><?= $mahasiswa["pk2"] ?></td>
-                        <td style="text-align: center;"><?= $mahasiswa["mekatronika"] ?></td>
-                        <td style="text-align: center;"><?= $mahasiswa["praktelkom"] ?></td>
+                        <td style="text-align: center;"><?= $si ?></td>
+                        <td style="text-align: center;"><?= $jarkomdat ?></td>
+                        <td style="text-align: center;"><?= $pk2 ?></td>
+                        <td style="text-align: center;"><?= $mekatronika ?></td>
+                        <td style="text-align: center;"><?= $praktelkom ?></td>
                         <!-- Kalau Mau CRUD -->
                         <!-- <td>
                             <a href="ubah.php?id=<?= $row["id"]; ?>">Ubah</a>
                             <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm ('yakin?')">Hapus</a>
                         </td> -->
                     </tr>
-                    <!-- The Modal -->
-                    <div id="myModal" class="modal">
-
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <p>Some text in the Modal..</p>
-                        </div>
-
-                    </div>
 
 
                 <?php
