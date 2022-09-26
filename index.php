@@ -73,23 +73,17 @@ if ($conn->connect_error) {
                     $absen = substr($nim, 1);
                     $urut = (int) $absen;
                     $nama   = $mahasiswa['nama'];
-
-                    $si             = $mahasiswa['si'];
-                    $pk2            = $mahasiswa['pk2'];
-                    $jarkomdat      = $mahasiswa['jarkomdat'];
-                    $mekatronika    = $mahasiswa['mekatronika'];
-                    $praktelkom     = $mahasiswa['praktelkom'];
                 ?>
                     <tr>
                         <td><?= $i++ ?></td>
                         <td><?= $nim ?></td>
                         <td><?= $nama ?></td>
 
-                        <td style="text-align: center;"><?= $si ?></td>
-                        <td style="text-align: center;"><?= $jarkomdat ?></td>
-                        <td style="text-align: center;"><?= $pk2 ?></td>
-                        <td style="text-align: center;"><?= $mekatronika ?></td>
-                        <td style="text-align: center;"><?= $praktelkom ?></td>
+                        <td style="text-align: center;"><?= $mahasiswa["si"] ?></td>
+                        <td style="text-align: center;"><?= $mahasiswa["jarkomdat"] ?></td>
+                        <td style="text-align: center;"><?= $mahasiswa["pk2"] ?></td>
+                        <td style="text-align: center;"><?= $mahasiswa["mekatronika"] ?></td>
+                        <td style="text-align: center;"><?= $mahasiswa["praktelkom"] ?></td>
                         <!-- Kalau Mau CRUD -->
                         <!-- <td>
                             <a href="ubah.php?id=<?= $row["id"]; ?>">Ubah</a>
