@@ -47,7 +47,7 @@ table{
   font-size: 0.8em;
 }
 tr:nth-child(odd){
-  background-color: rgb(226, 226, 226);
+  background-color: rgb(204, 197, 197);
 }
 th{
   text-align: center;
