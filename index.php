@@ -24,8 +24,8 @@ if ($conn->connect_error) {
     </header>
     <div class="container" style="margin-left:auto; margin-right:auto;">
         <table cellpadding="10px" class="table-content">
-            <thead class="thead1">
-                <th>No</th>
+            <thead>
+                <th class="pojok-kiri">No</th>
                 <th>NIM</th>
                 <th>Nama Lengkap</th>
                 <th>Sistem Informasi</th>
