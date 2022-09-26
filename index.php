@@ -21,16 +21,16 @@ require "connect.php";
     </header>
     <div class="container" style="margin-left:auto; margin-right:auto;">
         <table cellpadding="10px">
-                <th>No</th>
-                <th>NIM</th>
-                <th>Nama Lengkap</th>
-                <th>Sistem Informasi</th>
-                <th>Jaringan Komunikasi Data</th>
-                <th>Proyek Kreatif 2</th>
-                <th>Mekatronika</th>
-                <th>Praktikum Telekomunikasi</th>
-                <!-- Kalau mau pake CRUD -->
-                <!-- <th>Aksi</th> -->
+            <th>No</th>
+            <th>NIM</th>
+            <th>Nama Lengkap</th>
+            <th>Sistem Informasi</th>
+            <th>Jaringan Komunikasi Data</th>
+            <th>Proyek Kreatif 2</th>
+            <th>Mekatronika</th>
+            <th>Praktikum Telekomunikasi</th>
+            <!-- Kalau mau pake CRUD -->
+            <th>Aksi</th>
             <tbody>
                 <?php
                 //Untuk urutan
@@ -64,10 +64,10 @@ require "connect.php";
                         <td style="text-align: center;"><?= $mekatronika ?></td>
                         <td style="text-align: center;"><?= $praktelkom ?></td>
                         <!-- Kalau Mau CRUD -->
-                        <!-- <td>
-                            <a href="ubah.php?id=<?= $row["id"]; ?>">Ubah</a>
-                            <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm ('yakin?')">Hapus</a>
-                        </td> -->
+                        <td style="text-align: center;">
+                            <button><a href="ubah.php?id=<?= $row["id"]; ?>">Ubah</a></button>
+                            <button><a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm ('yakin?')">Hapus</a></button>
+                        </td>
                     </tr>
 
 
