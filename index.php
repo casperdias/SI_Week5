@@ -5,28 +5,7 @@ $conn = new mysqli("localhost", "root", "", "sisteminformasi");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-//echo "Connected successfully";
 
-// Query dari Database
-// $kuerimhs = mysqli_query($conn, "SELECT * FROM mahasiswa ORDER BY id ASC");
-// $kuerinilai = mysqli_query($conn, "SELECT * FROM nilai ORDER BY id ASC");
-
-// // Fetching Query Tabel Mahasiswa
-// $mahasiswa = mysqli_fetch_array($kuerimhs);
-// $nim = $mahasiswa['nim'];
-// $nama = $mahasiswa['nama'];
-
-// // Fetching Query Tabel Nilai
-// $nilai = mysqli_fetch_array($kuerinilai);
-// $si = $nilai['si'];
-// $pk2 = $nilai['pk2'];
-// $jarkomdat = $nilai['jarkomdat'];
-// $mekatronika = $nilai['mekatronika'];
-// $praktelkom = $nilai['praktelkom'];
-
-
-// var_dump($mahasiswa);
-// var_dump($nilai);
 ?>
 
 <!DOCTYPE html>
