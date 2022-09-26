@@ -46,6 +46,9 @@ table{
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   font-size: 0.8em;
 }
+tr:nth-child(odd){
+  background-color: rgb(204, 197, 197);
+}
 th{
   text-align: center;
   font-family: 'Work Sans', sans-serif;
@@ -54,7 +57,7 @@ th{
   color: #ffffff;
   border-collapse: collapse;
 }
-.lihatnilai{
+/* .lihatnilai{
   align-items: center;
     background-color: #0A66C2;
     border: 0;
@@ -140,4 +143,4 @@ th{
 .styled-table tbody tr.active-row {
   font-weight: bold;
   color: #009879;
-}
+} */
