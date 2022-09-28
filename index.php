@@ -65,7 +65,7 @@ require "connect.php";
                         <td style="text-align: center;"><?= $praktelkom ?></td>
                         <!-- Kalau Mau CRUD -->
                         <td style="text-align: center;">
-                            <button><a href="ubah.php?id=<?= $row["id"]; ?>">Ubah</a></button>
+                            <button><a href="ubah.php?nim=<?= $nim; ?>">Ubah</a></button>
                             <button><a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm ('yakin?')">Hapus</a></button>
                         </td>
                     </tr>

@@ -2,18 +2,24 @@
     include "connect.php";
     if(isset($_GET['nim'])){
         $NIM = $_GET['nim'];
-        $query =  mysqli_query($conn,"SELECT * FROM mahasiswa WHERE nim = $NIM INNER JOIN nilai ON mahasiswa.nim = nilai.nim");
-        while ($mahasiswa = mysqli_fetch_array($query)) {
+        $kuerimhs = mysqli_query($conn, "SELECT * FROM mahasiswa WHERE nim = '$NIM' " );
+        // INNER JOIN nilai ON mahasiswa.nim = nilai.nim WHERE mahasiswa.nim = $NIM");
+
+        // Looping terus selama fetching dari query berlangsung
+        while ($mahasiswa = mysqli_fetch_array($kuerimhs)) {
             $nim    = $mahasiswa['nim'];
+            $absen = substr($nim, 1);
+            $urut = (int) $absen;
             $nama   = $mahasiswa['nama'];
+
             $si             = $mahasiswa['si'];
             $pk2            = $mahasiswa['pk2'];
             $jarkomdat      = $mahasiswa['jarkomdat'];
             $mekatronika    = $mahasiswa['mekatronika'];
             $praktelkom     = $mahasiswa['praktelkom'];
         };
+        var_dump($NIM);
     };
-    var_dump($_GET['nim']);
 ?>
 
 
