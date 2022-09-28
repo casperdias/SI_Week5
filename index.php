@@ -11,7 +11,7 @@ require "connect.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Sistem Informasi</title>
 </head>
 
@@ -65,8 +65,8 @@ require "connect.php";
                         <td style="text-align: center;"><?= $praktelkom ?></td>
                         <!-- Kalau Mau CRUD -->
                         <td style="text-align: center;">
-                            <button><a href="ubah.php?nim=<?= $nim; ?>">Ubah</a></button>
-                            <button><a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm ('yakin?')">Hapus</a></button>
+                            <button><a href="ubah.php?nim=<?= $mahasiswa["nim"]; ?>">Ubah</a></button>
+                            <button><a href="hapus.php?nim=<?= $mahasiswa["nim"]; ?>" onclick="return confirm ('yakin?')">Hapus</a></button>
                         </td>
                     </tr>
 
@@ -76,6 +76,10 @@ require "connect.php";
                 ?>
             </tbody>
         </table>
+
+        <br>
+        <br>
+        <a href="tambah.php">Tambah Data Mahasiswa</a>
     </div>
 
 
