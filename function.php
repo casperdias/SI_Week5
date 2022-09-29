@@ -44,11 +44,15 @@ function tambah($data)
 }
 
 
-function hapus($id)
+function hapus($nim)
 {
      // isi $id adalah 'nim'
      global $koneksi;
-     mysqli_query($koneksi, "DELETE FROM mahasiswa INNER JOIN nilai ON mahasiswa.nim = nilai.nim WHERE mahasiswa.nim = '$id'");
+     mysqli_query($koneksi, "DELETE FROM mahasiswa WHERE nim = '$nim'");
+     mysqli_query($koneksi, "DELETE FROM nilai WHERE nim = '$nim'");
+     
+     var_dump($nim);
+
      // mysqli_query($koneksi, "DELETE FROM nilai WHERE  nim=$id");
      return mysqli_affected_rows($koneksi);
 }
@@ -66,32 +70,34 @@ function ubah($data)
      $jarkomdat = htmlspecialchars($data["jarkomdat"]);
      $meka = htmlspecialchars($data["mekatronika"]);
      $praktelkom = htmlspecialchars($data["praktelkom"]);
+     var_dump($nim, $nama, $id);
      // htmlspecialchars agar elemen html yang dimasukkan ke form tidak ngefek ke tampilan sistem
 
      // Query Update Data
      // =============================================
 
      // Percobaan Update Satu per Satu
-     // $isi = "UPDATE mahasiswa SET nim = '$nim', nama = '$nama' WHERE id = $id";
+     
+     //$isi = "UPDATE mahasiswa SET nim = '$nim', nama = '$nama' WHERE nim = '$id'";
      // $isi2 = "UPDATE nilai SET si='$si',pk2='$pk2',jarkomdat='$jarkomdat',mekatronika='$meka',praktelkom='$praktelkom' WHERE nim = $nim ";
 
      // Percobaan Update Langsung
      $update = "UPDATE mahasiswa INNER JOIN nilai ON mahasiswa.nim=nilai.nim 
-                                        SET mahasiswa.nim = $nim, 
-                                            mahasiswa.nama = $nama, 
+                                        SET mahasiswa.nim = '$nim', 
+                                            mahasiswa.nama = '$nama', 
                                             nilai.si = $si,
                                             nilai.pk2 = $pk2,
                                             nilai.jarkomdat = $jarkomdat,
                                             nilai.mekatronika = $meka,
                                             nilai.praktelkom= $praktelkom
-                    WHERE mahasiswa.nim = $nim";
+                    WHERE mahasiswa.nim = '$nim'";
 
-     // mysqli_query($koneksi, $isi);
+     //mysqli_query($koneksi, $isi);
      // mysqli_query($koneksi, $isi2);
      mysqli_query($koneksi, $update);
 
      // Return angka ketika ada data yang berhasil di update lalu dipakai untuk isset hapus.php
      return  mysqli_affected_rows($koneksi);
 
-     var_dump($isi2);
+     //var_dump($isi2);
 }

@@ -54,7 +54,7 @@ if (isset($_POST["submit"])) {
         <h2 style="text-align: center;">Edit Nilai Mahasiswa </h2>
     </header>
     <form action="" method="post">
-        <input type="hidden" name="id" value="<?= $mahasiswa["nim"]; ?>">
+        <input type="hidden" name="id" value="<?= $_GET['nim']; ?>">
         <ul>
             <li>
                 <label for="nim">NIM : </label>
