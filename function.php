@@ -16,7 +16,19 @@ function tambah($data)
      $meka = htmlspecialchars($data["mekatronika"]);
      $praktelkom = htmlspecialchars($data["praktelkom"]);
 
-
+     $result = mysqli_query($koneksi, "SELECT nim FROM mahasiswa WHERE nim = '$nim'");
+    if(mysqli_fetch_assoc($result))
+    {
+        echo "<script>alert('NIM sudah terdaftar')</script>";
+        return false;
+    }
+     $result = mysqli_query($koneksi, "SELECT nama FROM mahasiswa WHERE nama = '$nama'");
+    if(mysqli_fetch_assoc($result))
+    {
+        echo "<script>alert('Nama sudah terdaftar')</script>";
+        return false;
+    }
+    
      // htmlspecialchars agar elemen html yang dimasukkan ke form tidak ngefek ke tampilan sistem
 
      // query insert data
