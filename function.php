@@ -62,13 +62,14 @@ function ubah($data)
      // Percobaan Update Langsung
      $update = "UPDATE mahasiswa INNER JOIN nilai ON mahasiswa.nim=nilai.nim 
                                         SET mahasiswa.nim = '$nim', 
+                                            nilai.nim = '$nim',
                                             mahasiswa.nama = '$nama', 
                                             nilai.si = $si,
                                             nilai.pk2 = $pk2,
                                             nilai.jarkomdat = $jarkomdat,
                                             nilai.mekatronika = $meka,
                                             nilai.praktelkom= $praktelkom
-                    WHERE mahasiswa.nim = '$nim'";
+                    WHERE mahasiswa.nim = '$id'";
 
      mysqli_query($koneksi, $update);
 

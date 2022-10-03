@@ -4,8 +4,8 @@ require 'function.php';
 
 
 if (isset($_GET['nim'])) {
-    $NIM = $_GET['nim'];
-    $kuerimhs = mysqli_query($conn, "SELECT * FROM mahasiswa INNER JOIN nilai ON mahasiswa.nim = nilai.nim WHERE mahasiswa.nim = '$NIM'");
+    $NIM_lama = $_GET['nim'];
+    $kuerimhs = mysqli_query($conn, "SELECT * FROM mahasiswa INNER JOIN nilai ON mahasiswa.nim = nilai.nim WHERE mahasiswa.nim = '$NIM_lama'");
 
     // Looping terus selama fetching dari query berlangsung
     while ($mahasiswa = mysqli_fetch_array($kuerimhs)) {
