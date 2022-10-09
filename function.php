@@ -97,3 +97,4 @@ function ubah($data)
 //                     mahasiswa.nim LIKE '%$keyword%'";
 //      return query($query);
 // }
+?>
